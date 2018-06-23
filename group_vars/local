@@ -1,0 +1,118 @@
+# vi: set ft=yaml :
+
+#
+# DOTFILES CONFIG
+#
+dotfiles_user_home: "{{ '~' | expanduser }}"
+dotfiles_home: "{{dotfiles_user_home}}/dotfiles"
+
+#
+# GIT & GITHUB
+#
+full_name: Iain Wong
+git_user: iain-wong
+git_email: iainwong@outlook.com
+
+# See https://github.com/pstadler/keybase-gpg-github setup instructions
+# git_signing_key: 631262B829DDB506
+
+#
+# VIM
+#
+vim_install_plugins: no
+
+#
+# HOMEBREW? - is this needed?
+#
+# description: unsupported by ansible roles
+mac_homebrew_packages:
+  - curl
+  - wget
+  - highlight
+  - terminal-notifier
+  - youtube-dl
+  - htop-osx
+  - httpie
+  - postgresql
+  - redis
+  - diff-so-fancy
+  - docker-clean
+  - gpg
+  - ctop
+  - fwknop  # for COS vpn
+  - heroku/brew/heroku
+  - tldr
+  - wifi-password
+
+mac_cask_packages:
+  # Browsers
+  - firefox
+  - google-chrome
+  # Utilities
+  - bettertouchtool
+  - iterm2-nightly  # nightly has faster rendering
+  - keepingyouawake  # maintained caffeinate wrapper
+  - flux
+  - appcleaner
+  - daisydisk
+  # Vagrant/Virtualbox
+  - vagrant
+  - virtualbox
+  # Docker
+  # Using "edge" for compatibility with docker-sync
+  # https://github.com/EugenMayer/docker-sync/issues/517#issuecomment-396652578
+  - docker-edge
+  # chat
+  - limechat
+  - flowdock
+  - slack
+  - keybase
+  # Video conferencing
+  - zoomus
+  # Password manager
+  - 1password
+  # Backup/storage
+  - dropbox
+  # Media/Music
+  - spotify
+  - iina
+  - google-play-music-desktop-player
+  # Images
+  - imageoptim  # optimizing images
+  # Notetaking
+  - evernote
+  - nvalt  # for my commonplace book
+  - notion # slowly replacing evernote
+  # Fonts
+  - font-ubuntu
+  - font-cousine
+  # Databases
+  - datagrip  # RDBMS client
+  # VPN
+  - tunnelblick
+  # Docs
+  - dash
+  # Text expansion
+  - typinator
+  # Bibliography
+  - bibdesk
+  # Stay focused
+  - selfcontrol
+  # Design
+  - sketch
+
+# Mac-App-Store-only apps to be installed with mas
+# Use App IDs found with `mas search <name>`
+mac_mas_packages:
+  #- 585829637  # Todoist
+  #- 540348655  # Monosnap
+  #- 409203825  # Numbers
+  # - 847496013  # Deckset
+  # - 668208984  # Giphy capture
+
+#
+# RUBY
+#
+ruby_global_gems:
+  - lunchy
+  - travis
