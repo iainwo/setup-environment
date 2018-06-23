@@ -7,6 +7,8 @@
   roles:
     - brew
     - git
+    - {role: package_manager, tags: ['bootstrap']} 
+    - {role: zsh, tags: ['bootstrap']} 
+    - vim
     - tmux
-    - zsh
     - {role: macos, when: ansible_os_family == "Darwin"}

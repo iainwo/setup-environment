@@ -1,0 +1,5 @@
+
+vim_install_plugins: yes
+
+# MacOS specific
+vim_install_macvim: yes
