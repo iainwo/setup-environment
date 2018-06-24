@@ -10,7 +10,10 @@
     - {role: package_manager, tags: ['bootstrap']} 
     - {role: zsh, tags: ['bootstrap']} 
     - cscope
+    - ctags
+    - fzf
     - vim
     - tmux
+    - {role: openconnect, when: ansible_os_family == "Debian"}
     - {role: macos, when: ansible_os_family == "Darwin"}
     - java

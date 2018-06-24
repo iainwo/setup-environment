@@ -51,3 +51,5 @@ export NVM_DIR="$HOME/.nvm"
 # add vim support
 bindkey -v
 export KEYTIMEOUT=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

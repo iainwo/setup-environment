@@ -1,0 +1,4 @@
+- name: Brew install universal-ctags
+  homebrew:
+      name: "universal-ctags/universal-ctags/universal-ctags"
+      state: head 

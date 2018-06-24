@@ -1,0 +1,4 @@
+- name: Brew install fzf
+  homebrew:
+      name: "fzf"
+      state: present
