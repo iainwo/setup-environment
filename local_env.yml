@@ -9,6 +9,8 @@
     - git
     - {role: package_manager, tags: ['bootstrap']} 
     - {role: zsh, tags: ['bootstrap']} 
+    - cscope
     - vim
     - tmux
     - {role: macos, when: ansible_os_family == "Darwin"}
+    - java

@@ -6,7 +6,6 @@
 - name: Install vundle with git
   git:
     repo=https://github.com/VundleVim/Vundle.vim
-    dest="{{dotfiles_user_home}}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     dest="~/.vim/bundle/Vundle.vim"
 
 - name: Prep nerdfont 

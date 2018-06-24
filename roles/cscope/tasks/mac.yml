@@ -1,0 +1,8 @@
+#- name: Install mac cscope
+#  command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+
+- name: Ensure cscope is installed by brew
+  homebrew:
+    name: "cscope"
+    state: present
+     

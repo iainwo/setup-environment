@@ -1,0 +1,29 @@
+# Tap.
+- name: Tap into caskroom/versions
+  command: "brew tap caskroom/versions"
+  #  homebrew_tap: "tap=caskroom/versions state=present"
+
+# Cask.
+- name: Install the newest java cask 
+  homebrew_cask:
+    name: "java" 
+    state: present
+    install_options: "appdir=/Applications"
+    
+- name: Install java8 cask 
+  homebrew_cask:
+    name: "java8" 
+    state: present
+    install_options: "appdir=/Applications"
+
+- name: Install java7 cask 
+  homebrew_cask:
+    name: "java7" 
+    state: present
+    install_options: "appdir=/Applications"
+
+# Brew.
+- name: Ensure jenv brew is installed 
+  homebrew:
+    name: "jenv"
+    state: present
