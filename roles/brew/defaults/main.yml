@@ -10,6 +10,8 @@ homebrew_installed_packages:
   - pv
   - wget
   - tree
+  - curl
+  - htop
 
 homebrew_uninstalled_packages: []
 
@@ -22,6 +24,7 @@ homebrew_taps:
 homebrew_cask_apps:
   - firefox
   - iterm2
+  - tunnelblick
 
 homebrew_cask_uninstalled_apps: []
 
