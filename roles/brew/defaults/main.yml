@@ -12,6 +12,11 @@ homebrew_installed_packages:
   - tree
   - curl
   - htop
+  - nmap
+  - readline
+  - openssl
+  - mcrypt
+  - gpg
 
 homebrew_uninstalled_packages: []
 
