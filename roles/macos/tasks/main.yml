@@ -20,3 +20,24 @@
     - defaults write com.apple.terminal 'Startup Window Settings' -string IW-Term
   changed_when: false
   when: "'IW-Term' not in terminal_theme.stdout"
+
+- name: Check for Terminal.app PLIST symlink
+  state: path=~/Library/Preferences/com.apple.Terminal.plist
+  register: terminal_app_plist
+
+- name: Backup current Terminal.app PLIST
+  copy:
+      src: ~/Library/Preferences/com.apple.Terminal.plist
+      dest: ~/Library/Preferences/com.apple.Terminal.plist.BAK
+  when: terminal_app_plist.stat is defined and terminal_app_plist.stat.islnk is not defined
+
+- name: Delete the current Terminal.app PLIST
+  file: path=~/Library/Preferences/com.apple.Terminal.plist state=absent
+  when: terminal_app_plist.stat is defined and terminal_app_plist.stat.islnk is not defined
+
+- name: Symlink this project's Terminal.app PLIST
+  file: path=~/Library/Preferences/com.apple.Terminal.plist
+        src=roles/macos/files/com.apple.Terminal.plist
+        state=link
+        force=yes
+  when: terminal_app_plist.stat is defined and terminal_app_plist.stat.islnk is not defined
