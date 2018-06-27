@@ -17,6 +17,8 @@ homebrew_installed_packages:
   - openssl
   - mcrypt
   - gpg
+  - m-cli
+  - dockutil
 
 homebrew_uninstalled_packages: []
 
