@@ -47,12 +47,20 @@
 <Right>\t:vertical	roles/vim/files/vimrc	/^	nnoremap <Right>	:vertical resize -2<CR>$/;"	m
 <Up>\t:resize	roles/vim/files/vimrc	/^	nnoremap <Up>	:resize +2<CR>$/;"	m
 >	roles/vim/files/vimrc	/^vnoremap > >gv                                                                  $/;"	m
+BLUE	extras/plistinfo.py	/^BLUE = '\\033[94m'$/;"	v
+BOLD	extras/plistinfo.py	/^BOLD = '\\033[1m'$/;"	v
+DOCUMENTATION	library/plist.py	/^DOCUMENTATION = '''$/;"	v
 Downloads	osx-solarized/README.md	/^Downloads$/;"	s
+ENDC	extras/plistinfo.py	/^ENDC = '\\033[0m'$/;"	v
+EXAMPLES	library/plist.py	/^EXAMPLES = '''$/;"	v
+GREEN	extras/plistinfo.py	/^GREEN = '\\033[92m'$/;"	v
 Installation	osx-solarized/README.md	/^Installation$/;"	s
 NERDTreeShowHidden	roles/vim/files/vimrc	/^let NERDTreeShowHidden=1 " show hidden files$/;"	v
+RED	extras/plistinfo.py	/^RED = '\\033[91m'$/;"	v
 Solarized - OS X 10.7+ Terminal.App color theme	osx-solarized/README.md	/^Solarized - OS X 10.7+ Terminal.App color theme$/;"	c
 The Values	osx-solarized/README.md	/^The Values$/;"	s
 Visit the [Solarized homepage]	osx-solarized/README.md	/^Visit the [Solarized homepage]$/;"	s
+YELLOW	extras/plistinfo.py	/^YELLOW = '\\033[93m'$/;"	v
 ansible-go-boot-boot	README.md	/^# ansible-go-boot-boot$/;"	c
 base16colorspace	roles/vim/files/vimrc	/^let base16colorspace=256 "access colors present in 256 colorspace$/;"	v
 bg	roles/tmux/files/tmux-mac.conf	/^set -g window-status-current-format "#[fg=black, bg=red] #I #[fg=black,bg=red]#W#[fg=red]#F "$/;"	k
@@ -60,6 +68,9 @@ bind	roles/tmux/files/tmux-mac.conf	/^bind = select-layout tiled$/;"	k
 bind	roles/tmux/files/tmux.conf	/^bind = select-layout tiled$/;"	k
 c	roles/zsh/aliases.zsh	/^alias c="clear"$/;"	a
 cl	roles/zsh/aliases.zsh	/^alias cl='clear'$/;"	a
+determine_plist_path	extras/plistinfo.py	/^def determine_plist_path(destination):$/;"	f
+do_plist	library/plist.py	/^def do_plist(module, filename, values, backup=False):$/;"	f
+equal	library/plist.py	/^def equal(slave, master):$/;"	f
 extract	roles/zsh/functions.zsh	/^extract () {$/;"	f
 g:airline#extensions#tabline#enabled	roles/vim/files/vimrc	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
 g:airline_powerline_fonts	roles/vim/files/vimrc	/^let g:airline_powerline_fonts = 1$/;"	v
@@ -72,6 +83,8 @@ g:spacegray_underline_search	roles/vim/files/vimrc	/^let g:spacegray_underline_s
 is_vim	roles/tmux/files/tmux-mac.conf	/^is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\\\/)g?(view|n?vim?)(diff)?$"'$/;"	k
 is_vim	roles/tmux/files/tmux.conf	/^is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\\\/)g?(view|n?vim?)(diff)?$"'$/;"	k
 lj	roles/zsh/aliases.zsh	/^alias lj='jobs'$/;"	a
+main	extras/plistinfo.py	/^def main():$/;"	f
+main	library/plist.py	/^def main():$/;"	f
 mapleader	roles/vim/files/vimrc	/^let mapleader = ","     " LEADER Key                                            $/;"	v
 pg	roles/zsh/aliases.zsh	/^alias pg='ps -ef | grep'$/;"	a
 pubkey	roles/zsh/aliases.zsh	/^alias pubkey="more ~\/.ssh\/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"$/;"	a
@@ -85,5 +98,6 @@ t	roles/tmux/files/tmux.conf	/^bind-key -n C-S-Left select-window -t :-$/;"	k
 t	roles/tmux/files/tmux.conf	/^bind-key -n C-S-Right select-window -t :+$/;"	k
 t	roles/tmux/files/tmux.conf	/^bind-key -r C-h select-window -t :-$/;"	k
 t	roles/tmux/files/tmux.conf	/^bind-key -r C-l select-window -t :+$/;"	k
+update	library/plist.py	/^def update(plist, working_values):$/;"	f
 v	roles/zsh/aliases.zsh	/^alias v="vim"$/;"	a
 vi	roles/zsh/aliases.zsh	/^alias vi="vim"$/;"	a
