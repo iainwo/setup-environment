@@ -1,3 +1,4 @@
 ---
 # Set the development directory
 development_dir: '~/Documents/Development'
+screencapture_dir: '~/Pictures/Screenshots'
