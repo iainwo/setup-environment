@@ -34,6 +34,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'junegunn/fzf'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'benmills/vimux'
+Plugin 'hari-rangarajan/CCTree'
 
 " Git
 Plugin 'tpope/vim-fugitive'
