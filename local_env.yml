@@ -22,3 +22,4 @@
       os_defaults: "{{ macos_os_defaults }}"
       when: ansible_os_family == "Darwin"
     - java
+    - external_drive

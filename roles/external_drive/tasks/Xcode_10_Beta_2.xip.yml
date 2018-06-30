@@ -1,0 +1,43 @@
+---
+- name: asserting Xcode is staged on the target server
+  stat: path=/Users/{{ ansible_user }}/{{ xcode_install_file }}
+  register: xcode_staging_pathfile
+
+- name: asserting Xcode archive is valid
+  command: "pkgutil --check-signature {{ xcode_pathfile }} | grep \"Status: signed Apple Software\""
+
+- name: staging Xcode on to the target server
+  copy: src={{ xcode_pathfile }} dest=/Users/{{ ansible_user }}
+  when: xcode_staging_pathfile.stat.exists == False
+
+- name: extracting staged Xcode archive in place, on the target server
+  extract_xip:
+      src: "/Users/{{ ansible_user }}/{{ xcode_install_file }}"
+      dest: "/Applications"
+  become: yes
+
+- name: accepting Apple license agreement
+  command: /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept
+  become: yes
+  become_method: sudo
+
+- name: install additional xcode components
+  command: installer -pkg /Applications/Xcode.app/Contents/Resources/Packages/XcodeSystemResources.pkg -target /
+  become: yes
+
+- name: install mobile device development package
+  command: installer -pkg /Applications/Xcode.app/Contents/Resources/Packages/MobileDeviceDevelopment.pkg -target /
+  become: yes
+  become_method: sudo
+
+- name: check on the status of developer mode
+  command: DevToolsSecurity -status
+  become: yes
+  become_method: sudo
+  register: dev_tools_security_status
+
+- name: enable developer mode
+  command: DevToolsSecurity -enable
+  become: yes
+  become_method: sudo
+  when: "'disabled' in dev_tools_security_status.stdout"
