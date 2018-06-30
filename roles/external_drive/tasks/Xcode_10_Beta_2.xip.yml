@@ -1,32 +1,39 @@
 ---
 - name: asserting Xcode is staged on the target server
-  stat: path=/Users/{{ ansible_user }}/{{ xcode_install_file }}
+  stat: 
+    path: "{{ target_pathfile }}"
   register: xcode_staging_pathfile
 
-- name: asserting Xcode archive is valid
-  command: "pkgutil --check-signature {{ xcode_pathfile }} | grep \"Status: signed Apple Software\""
+  #- name: asserting Xcode archive is valid
+  #  command: "pkgutil --check-signature {{ xcode_pathfile }} | grep \"Status: signed Apple Software\""
 
 - name: staging Xcode on to the target server
-  copy: src={{ xcode_pathfile }} dest=/Users/{{ ansible_user }}
+  copy:
+    src: "{{ external_pathfile }}"
+    dest:  "{{ target_install_basedir }}"
   when: xcode_staging_pathfile.stat.exists == False
 
 - name: extracting staged Xcode archive in place, on the target server
-  extract_xip:
-      src: "/Users/{{ ansible_user }}/{{ xcode_install_file }}"
-      dest: "/Applications"
+  command: chdir=/Applications xip -x "{{ xcode_install_file }}"
   become: yes
+  when: xcode_staging_pathfile.stat.exists == False
+
+- name: cleaning up the staged Xcode XIP archive
+  file: 
+    state: absent
+    path: "{{ target_install_basedir }}/{{ xcode_install_file }}" 
 
 - name: accepting Apple license agreement
-  command: /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -license accept
+  command: "{{ target_pathfile }}/Contents/Developer/usr/bin/xcodebuild -license accept"
   become: yes
   become_method: sudo
 
 - name: install additional xcode components
-  command: installer -pkg /Applications/Xcode.app/Contents/Resources/Packages/XcodeSystemResources.pkg -target /
+  command: "installer -pkg {{ target_pathfile }}/Contents/Resources/Packages/XcodeSystemResources.pkg -target /"
   become: yes
 
 - name: install mobile device development package
-  command: installer -pkg /Applications/Xcode.app/Contents/Resources/Packages/MobileDeviceDevelopment.pkg -target /
+  command: "installer -pkg {{ target_pathfile }}/Contents/Resources/Packages/MobileDeviceDevelopment.pkg -target /"
   become: yes
   become_method: sudo
 

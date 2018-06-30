@@ -1,4 +1,11 @@
 ---
-  external_drive_basedir: "/Volumes/IW_MAC_OS/Ansible"
+  # INSTALL FILE
   xcode_install_file: "Xcode_10_Beta_2.xip"
-  xcode_pathfile: "{{ external_drive_basedir }}/{{ xcode_install_file }}"
+
+  # BASE REFERENCES
+  external_drive_basedir: "/Volumes/IW_MAC_VOLUME/Ansible"
+  target_install_basedir: "/Applications"
+
+  # PATHS
+  external_pathfile: "{{ external_drive_basedir }}/{{ xcode_install_file }}"
+  target_pathfile: "{{ target_install_basedir }}/Xcode.app"
