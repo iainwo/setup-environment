@@ -1,0 +1,12 @@
+---
+- name: Prep nerdfont 
+  command: mkdir -p ~/.local/share/fonts
+
+- name: Prep nerdfont Library
+  command: mkdir -p ~/Library/Fonts
+
+- name: Download nerdfont
+  get_url: url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf dest="~/.local/share/fonts/Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete.otf" mode=755
+
+- name: Download nerdfont to Library
+  get_url: url=https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf dest="~/Library/Fonts/Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete.otf" mode=755

@@ -255,7 +255,7 @@ macos_os_defaults:
         #Default Window Settings: "Basic"
         #      NSWindow Frame TTAppPreferences: "2066 277 688 533 1440 -180 1920 1057 "
         #      NSWindow Frame TTWindow Solarized Dark: "1440 -177 1921 1054 1440 -180 1920 1057 "
-      Startup Window Settings: "Solarized Dark"
+        # Startup Window Settings: "Solarized Dark"
         #      NSWindow Frame TTWindow Pro: "1547 170 1330 674 1440 -180 1920 1057 "
         #      NSNavLastRootDirectory: "~/dotfiles/roles/macos/files"
         #      SecureKeyboardEntry: false

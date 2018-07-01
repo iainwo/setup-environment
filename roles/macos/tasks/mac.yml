@@ -27,7 +27,7 @@
   check_mode: no
 
 - name: Ensure custom Terminal profile is added.
-  shell: "open roles/macos/files/Solarized-Dark.terminal"
+  shell: "open roles/macos/files/IW-Solarized-Dark.terminal"
   #  changed_when: false
   #  when: "'Solarized-Dark' not in terminal_theme.stdout"
 
