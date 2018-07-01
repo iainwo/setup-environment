@@ -134,3 +134,5 @@
     container: "{{ item.container | default(None) }}"
   become: "{{ item.become | default(false) }}"
   with_items: "{{ os_defaults }}"
+  tags:
+    - terminal
