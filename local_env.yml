@@ -9,6 +9,7 @@
     - git
     - {role: package_manager, tags: ['bootstrap']} 
     - {role: zsh, tags: ['bootstrap']} 
+    - common
     - cscope
     - ctags
     - fzf
