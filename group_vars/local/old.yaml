@@ -4,7 +4,7 @@
 # DOTFILES CONFIG
 #
 dotfiles_user_home: "{{ '~' | expanduser }}"
-dotfiles_home: "{{dotfiles_user_home}}/dotfiles"
+dotfiles_home: "{{dotfiles_user_home}}/ansible-go-boot-boot"
 
 #
 # GIT & GITHUB

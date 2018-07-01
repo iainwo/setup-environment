@@ -46,7 +46,7 @@ then
 fi
 
 echo "Setting up local dev environment..."
-ansible-playbook -i ~/dotfiles/hosts -e ansible_python_interpreter=/usr/local/bin/python3  ~/dotfiles/local_env.yml
+ansible-playbook -i ~/ansible-go-boot-boot/hosts -e ansible_python_interpreter=/usr/local/bin/python3  ~/ansible-go-boot-boot/local_env.yml
 
 # Disable passwordless sudo after the macbuild is complete
 sudo sed -i -e "s/^%admin.*/%admin  ALL=(ALL) ALL/" /etc/sudoers
