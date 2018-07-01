@@ -27,15 +27,15 @@
   check_mode: no
 
 - name: Ensure custom Terminal profile is added.
-  shell: "open roles/macos/files/IW-Solarized-Dark.terminal"
+  shell: "open roles/macos/files/IW.terminal"
   #  changed_when: false
   #  when: "'Solarized-Dark' not in terminal_theme.stdout"
 
 - name: Ensure custom Terminal profile is set as default.
   shell: "{{ item }}"
   with_items:
-    - defaults write com.apple.terminal 'Default Window Settings' -string IW-Solarized-Dark
-    - defaults write com.apple.terminal 'Startup Window Settings' -string IW-Solarized-Dark
+    - defaults write com.apple.terminal 'Default Window Settings' -string IW
+    - defaults write com.apple.terminal 'Startup Window Settings' -string IW
   #changed_when: false
   #when: "'Solarized-Dark' not in terminal_theme.stdout"
 
