@@ -252,7 +252,7 @@ macos_os_defaults:
         #      NSWindow Frame NSFontPanel: "2595 -86 682 516 1440 -180 1920 1057 "
         #      DefaultProfilesVersion: 1
         #      Man Page Window Settings: "Man Page"
-        #      Default Window Settings: "Solarized Dark"
+        #Default Window Settings: "Basic"
         #      NSWindow Frame TTAppPreferences: "2066 277 688 533 1440 -180 1920 1057 "
         #      NSWindow Frame TTWindow Solarized Dark: "1440 -177 1921 1054 1440 -180 1920 1057 "
       Startup Window Settings: "Solarized Dark"
